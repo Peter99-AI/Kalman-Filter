@@ -102,8 +102,8 @@ int main()
         return EXIT_FAILURE;
     }
  
-    cap.set(CV_CAP_PROP_FRAME_WIDTH, 1024);
-    cap.set(CV_CAP_PROP_FRAME_HEIGHT, 768);
+    cap.set(cv::CAP_PROP_FRAME_WIDTH, 700);
+    cap.set(cv::CAP_PROP_FRAME_HEIGHT, 500);
     // <<<<< Camera Settings
  
     cout << "\nHit 'q' to exit...\n";
@@ -162,7 +162,7 @@ int main()
  
         // >>>>> HSV conversion
         cv::Mat frmHsv;
-        cv::cvtColor(blur, frmHsv, CV_BGR2HSV);
+        cv::cvtColor(blur, frmHsv, cv::COLOR_BGR2HSV);
         // <<<<< HSV conversion
  
         // >>>>> Color Thresholding
@@ -182,8 +182,8 @@ int main()
  
         // >>>>> Contours detection
         vector<vector<cv::Point> > contours;
-        cv::findContours(rangeRes, contours, CV_RETR_EXTERNAL,
-                         CV_CHAIN_APPROX_NONE);
+        cv::findContours(rangeRes, contours, cv::RETR_EXTERNAL,
+                         cv::CHAIN_APPROX_NONE);
         // <<<<< Contours detection
  
         // >>>>> Filtering
